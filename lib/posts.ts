@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import { PostMetaData, Slug } from "@/types";
 
 const postsDir = path.join(process.cwd(), "posts");
 
@@ -17,11 +18,11 @@ export function getAllSortedPosts() {
 
       return {
         slug: file.replace(".md", ""),
-        ...data,
+        ...(data as PostMetaData),
       };
     })
     .sort((a, b) => {
-      return new Date(b.date) - new Date(a.date);
+      return Number(new Date(b.date)) - Number(new Date(a.date));
     });
 }
 
@@ -36,7 +37,7 @@ export function getAllPostsSlug() {
     }));
 }
 
-export async function getPost(slug) {
+export async function getPost(slug: Slug) {
   const fullPath = path.join(postsDir, `${slug}.md`);
   const fileContent = fs.readFileSync(fullPath, "utf-8");
   const { data, content } = matter(fileContent);

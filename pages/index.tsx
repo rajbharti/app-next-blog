@@ -1,8 +1,13 @@
 import Head from "next/head";
 import Link from "next/link";
 import { getAllSortedPosts } from "@/lib/posts";
+import { PostMetaData, PostSlug } from "@/types";
 
-export default function Home({ posts }) {
+interface HomeProps {
+  posts: (PostMetaData & PostSlug)[];
+}
+
+export default function Home({ posts }: HomeProps) {
   return (
     <>
       <Head>

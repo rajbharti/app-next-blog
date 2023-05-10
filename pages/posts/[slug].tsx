@@ -2,8 +2,13 @@ import Layout from "@/components/layout";
 import { getAllPostsSlug, getPost } from "@/lib/posts";
 import Head from "next/head";
 import Link from "next/link";
+import type { PostMetaData, PostSlug } from "@/types";
 
-export default function Post({ title, date, htmlContent }) {
+interface PostProps extends PostMetaData {
+  htmlContent: string;
+}
+
+export default function Post({ title, date, htmlContent }: PostProps) {
   return (
     <Layout>
       <Head>
@@ -27,7 +32,11 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+interface StaticProps {
+  params: PostSlug;
+}
+
+export async function getStaticProps({ params }: StaticProps) {
   const postData = await getPost(params.slug);
 
   return {
