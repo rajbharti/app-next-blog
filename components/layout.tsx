@@ -1,15 +1,18 @@
 import dayjs from "dayjs";
+import Link from "next/link";
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="container mx-auto mt-4">
+    <div className="mx-auto mt-4 md:max-w-4xl">
       <header className="mb-4 flex">
-        <h1>Blog Site</h1>
-        <div className="text-gray-500">
-          writing by <span className="text-sky-400">Raj Kumar Bharti</span>
+        <h1 className="flex-auto">
+          <Link href="/">Blog Site</Link>
+        </h1>
+        <div className="flex-auto self-end text-right text-gray-400">
+          writing by <span className="text-blue-500">Raj Kumar Bharti</span>
         </div>
       </header>
 

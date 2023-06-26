@@ -15,17 +15,19 @@ export default function Post({ title, date, htmlContent }: PostProps) {
       <Head>
         <title>{title}</title>
       </Head>
-      <article className="mb-4">
+      <article className="mb-6 border-b pb-3">
         <div className="text-sm text-gray-400">
           {dayjs(date).format("MMM DD, YYYY").toUpperCase()}
         </div>
-        <h2 className="mb-4">{title}</h2>
+        <h2 className="mb-6 text-sky-500">{title}</h2>
         <div
           dangerouslySetInnerHTML={{ __html: htmlContent }}
-          className="text-lg"
+          className="font-serif text-xl leading-8"
         />
       </article>
-      <Link href="/">Back</Link>
+      <Link href="/" className="text-sky-800 hover:underline">
+        Back
+      </Link>
     </Layout>
   );
 }

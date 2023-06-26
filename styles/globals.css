@@ -7,7 +7,32 @@
     @apply bg-sky-100;
   }
 
+  h1 {
+    @apply text-2xl font-bold text-sky-800;
+  }
+
   h2 {
-    @apply my-2 text-3xl text-slate-700 hover:text-black;
+    @apply my-2 text-3xl text-slate-700;
+  }
+
+  ul,
+  ol {
+    @apply ml-5;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  li {
+    @apply ml-5;
+  }
+
+  p {
+    @apply my-4;
   }
 }
