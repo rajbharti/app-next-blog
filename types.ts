@@ -4,6 +4,7 @@ export interface PostMetaData {
 }
 
 export type Slug = string;
+
 export interface PostSlug {
   slug: Slug;
 }
