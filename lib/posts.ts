@@ -5,6 +5,8 @@ import { remark } from "remark";
 import html from "remark-html";
 import type { PostMetaData, Slug } from "@/types";
 
+// https://nextjs.org/blog/markdown
+
 const postsDir = path.join(process.cwd(), "posts");
 
 export function getAllSortedPosts() {

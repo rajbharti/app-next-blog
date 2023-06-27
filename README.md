@@ -1,6 +1,8 @@
 # Blog Site
 
-> Example with **Page Router**
+> Render content from markdown files
+
+Example with **Page Router**
 
 ## Tech Stack
 
