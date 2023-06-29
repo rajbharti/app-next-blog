@@ -17,7 +17,7 @@ export default function Post({ title, date, htmlContent }: PostProps) {
         <title>{title}</title>
       </Head>
 
-      <article className="mb-3 max-w-none border-b pb-2 sm:mb-6 sm:pb-3">
+      <article className="mb-3 max-w-none border-b border-slate-300 pb-2 sm:mb-5 sm:pb-3">
         <div className="text-sm text-gray-400">
           {dayjs(date).format("MMM DD, YYYY").toUpperCase()}
         </div>

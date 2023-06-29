@@ -18,7 +18,7 @@ export default function Home({ posts }: HomeProps) {
       {posts.map(({ slug, title, date }) => (
         <div
           key={slug}
-          className="mb-4 border-b border-pink-200 pb-1 last:mb-0 last:border-0 last:pb-0 sm:mb-6 sm:pb-3"
+          className="mb-4 border-b border-slate-300 pb-1 last:mb-0 last:border-0 last:pb-0 sm:mb-6 sm:pb-3"
         >
           <div className="text-sm text-gray-400">
             {dayjs(date).format("MMM DD, YYYY").toUpperCase()}
