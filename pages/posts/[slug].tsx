@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import dayjs from "dayjs";
+import clsx from "clsx";
 import Layout from "@/components/layout";
 import { getAllPostsSlug, getPost } from "@/lib/posts";
 import type { PostMetaData, PostSlug } from "@/types";
@@ -15,14 +16,18 @@ export default function Post({ title, date, htmlContent }: PostProps) {
       <Head>
         <title>{title}</title>
       </Head>
-      <article className="prose mb-6 border-b pb-3">
+
+      <article className="mb-3 max-w-none border-b pb-2 sm:mb-6 sm:pb-3">
         <div className="text-sm text-gray-400">
           {dayjs(date).format("MMM DD, YYYY").toUpperCase()}
         </div>
-        <h2 className="mb-6 text-pink-700">{title}</h2>
+        <h2 className="my-2 text-2xl text-pink-700 sm:text-3xl">{title}</h2>
         <div
           dangerouslySetInnerHTML={{ __html: htmlContent }}
-          className="font-serif text-xl leading-8"
+          className={clsx(
+            "prose prose-base max-w-none prose-headings:mt-8 prose-headings:font-normal prose-headings:text-sky-700 prose-ul:my-2 prose-li:my-2",
+            "md:prose-lg max-sm:prose-headings:mb-3 max-sm:prose-headings:mt-4 max-sm:prose-p:mb-4 max-sm:prose-pre:my-3 max-sm:prose-ul:my-0 max-sm:prose-li:my-0 sm:mt-8"
+          )}
         />
       </article>
       <div className="text-right">

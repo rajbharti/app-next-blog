@@ -18,15 +18,18 @@ export default function Home({ posts }: HomeProps) {
       {posts.map(({ slug, title, date }) => (
         <div
           key={slug}
-          className="mb-6 border-b border-pink-200 pb-3 last:mb-0 last:border-0 last:pb-0"
+          className="mb-4 border-b border-pink-200 pb-1 last:mb-0 last:border-0 last:pb-0 sm:mb-6 sm:pb-3"
         >
           <div className="text-sm text-gray-400">
             {dayjs(date).format("MMM DD, YYYY").toUpperCase()}
           </div>
 
-          <h2 className="hover:text-pink-700">
-            <Link href={`/posts/${slug}`}>{title}</Link>
-          </h2>
+          <Link
+            href={`/posts/${slug}`}
+            className="my-2 block text-xl text-slate-700 hover:text-pink-700 sm:text-3xl"
+          >
+            {title}
+          </Link>
         </div>
       ))}
     </Layout>

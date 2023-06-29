@@ -5,21 +5,24 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
+/* TODO: 
+- based on slug change content background
+*/
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="mx-auto mt-4 md:max-w-4xl">
-      <header className="mb-4 flex">
-        <h1 className="flex-auto drop-shadow-lg ">
+    <div className="mx-4 mt-4 md:mx-6 lg:mx-auto lg:max-w-4xl">
+      <header className="mb-4 text-center sm:ml-6 sm:flex sm:text-left">
+        <h1 className="drop-shadow-lg sm:flex-auto ">
           <Link href="/" className="">
             Blog Site
           </Link>
         </h1>
-        <div className="mr-6 flex-auto self-end text-right text-pink-700">
+        <div className="text-pink-700 sm:mr-6 sm:flex-auto sm:self-end sm:text-right">
           writing by <span className="text-sky-500">Raj Kumar Bharti</span>
         </div>
       </header>
 
-      <section className="overflow-x-auto rounded-2xl border-4 border-orange-800 bg-slate-100 bg-gradient-to-b from-white to-slate-100 p-6 shadow-lg">
+      <section className="overflow-x-auto rounded-2xl border-4 border-orange-800 bg-slate-100 bg-gradient-to-b from-white to-slate-100 p-4 shadow-lg sm:p-6">
         {children}
       </section>
 

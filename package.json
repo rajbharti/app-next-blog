@@ -6,13 +6,23 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install",
+    "prettier:options": "prettier --ignore-unknown app/** pages/** components/**",
+    "lint:prettier": "npm run prettier:options -- --check",
+    "fix:prettier": "npm run prettier:options -- --write"
+  },
+  "lint-staged": {
+    "app/**": "prettier --write --ignore-unknown",
+    "pages/**": "prettier --write --ignore-unknown",
+    "components/**": "prettier --write --ignore-unknown"
   },
   "dependencies": {
     "@next/font": "13.1.6",
     "@types/node": "18.14.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
+    "clsx": "^1.2.1",
     "dayjs": "^1.11.8",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
@@ -28,8 +38,10 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.14",
+    "lint-staged": "^13.2.3",
     "postcss": "^8.4.24",
     "prettier-plugin-tailwindcss": "^0.3.0",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.3.2",
+    "husky": "^8.0.0"
   }
 }
