@@ -8,14 +8,12 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "prettier:options": "prettier --ignore-unknown app/** pages/** components/**",
+    "prettier:options": "prettier --ignore-unknown {app,pages,components}/**",
     "lint:prettier": "npm run prettier:options -- --check",
     "fix:prettier": "npm run prettier:options -- --write"
   },
   "lint-staged": {
-    "app/**": "prettier --write --ignore-unknown",
-    "pages/**": "prettier --write --ignore-unknown",
-    "components/**": "prettier --write --ignore-unknown"
+    "{app,pages,components}/**": "prettier --write --ignore-unknown"
   },
   "dependencies": {
     "@next/font": "13.1.6",
