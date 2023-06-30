@@ -2,7 +2,9 @@
 
 > Render content from markdown files
 
-Example with **Page Router**
+![blog site](./readme-images/demo.png)
+
+Example with Next.js **Page Router**
 
 ## Tech Stack
 
