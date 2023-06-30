@@ -19,8 +19,11 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="mx-4 mt-4 md:mx-6 lg:mx-auto lg:max-w-4xl">
       <header className="mb-4 text-center sm:ml-6 sm:flex sm:text-left">
-        <h1 className="drop-shadow-lg sm:flex-auto ">
-          <Link href="/" className="">
+        <h1 className="sm:flex-auto">
+          <Link
+            href="/"
+            className="bg-gradient-to-r from-rose-500 to-violet-500 bg-clip-text text-transparent drop-shadow"
+          >
             Blog Site
           </Link>
         </h1>
