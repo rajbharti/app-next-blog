@@ -13,7 +13,7 @@
     "fix:prettier": "npm run prettier:options -- --write"
   },
   "lint-staged": {
-    "{app,pages,components}/**": "prettier --write --ignore-unknown"
+    "{app,pages,components}/**": ["prettier --write --ignore-unknown", "pnpm lint"]
   },
   "dependencies": {
     "@next/font": "13.1.6",
